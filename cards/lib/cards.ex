@@ -12,7 +12,7 @@ defmodule Cards do
       :world
 
   """
-  def hello do
-    :world
+  def hello(value) do
+    "Hello world! from #{value}"
   end
 end
