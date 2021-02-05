@@ -51,4 +51,8 @@ defmodule Cards do
     # Append ? to functions that return Booleans => convention!
     Enum.member?(deck, card)
   end
+
+  def deal(deck, count) do
+    Enum.split(deck, count)
+  end
 end
