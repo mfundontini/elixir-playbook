@@ -53,6 +53,7 @@ defmodule Cards do
   end
 
   def deal(deck, count) do
+    # Returns a tuple
     Enum.split(deck, count)
   end
 end
