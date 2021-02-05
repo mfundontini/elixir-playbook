@@ -15,4 +15,8 @@ defmodule Cards do
   def create_deck() do
     ["Ace of Spades", "Two of Hearts", "Three of Clubs", "Four of Diamonds", "Five of Spades"]
   end
+
+  def shuffle(deck) do
+    Enum.shuffle(deck)
+  end
 end
