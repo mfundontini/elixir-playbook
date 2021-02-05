@@ -14,7 +14,16 @@ defmodule Cards do
   """
   def create_deck() do
     # Implicit return statements, explicit return causes a complilation error
-    ["Ace of Spades", "Two of Hearts", "Three of Clubs", "Four of Diamonds", "Five of Spades"]
+    suits = ["Spades", "Hearts", "Clubs", "Diamonds"]
+    values = ["Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"]
+
+    for suit <- suits do
+      
+      for value <- values do
+        "#{value} of #{suit}"
+      end
+
+    end
   end
 
   def shuffle(deck) do
