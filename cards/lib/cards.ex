@@ -32,7 +32,6 @@ defmodule Cards do
 
       iex> deck = Cards.create_deck()
       iex> deck
-      iex> deck
       ["Ace of Spades", "Two of Spades", "Three of Spades", "Four of Spades",
       "Five of Spades", "Six of Spades", "Seven of Spades", "Eight of Spades",
       "Nine of Spades", "Ten of Spades", "Jack of Spades", "Queen of Spades",
