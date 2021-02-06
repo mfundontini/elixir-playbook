@@ -68,4 +68,12 @@ defmodule Cards do
       {:error, _reason} -> "#{filename} not written."
     end
   end
+
+  def load(filename) do
+    case File.read(filename) do
+      {:ok, binary} -> :erlang.binary_to_term binary
+      {:error, _reason} -> "#{filename} not loaded successfully."
+    end
+  end
+
 end
