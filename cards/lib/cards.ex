@@ -43,8 +43,8 @@ defmodule Cards do
       "Seven of Clubs", "Eight of Clubs", "Nine of Clubs", "Ten of Clubs",
       "Jack of Clubs", "Queen of Clubs", "King of Clubs", "Ace of Diamonds",
       "Two of Diamonds", "Three of Diamonds", "Four of Diamonds", "Five of Diamonds",
-      "Six of Diamonds", "Seven of Diamonds", "Eight of Diamonds",
-      "Nine of Diamonds", "Ten of Diamonds", "Jack of Diamonds", ...]
+      "Six of Diamonds", "Seven of Diamonds", "Eight of Diamonds", "Nine of Diamonds",
+      "Ten of Diamonds", "Jack of Diamonds", "Queen of Diamonds", "King of Diamonds"]
 
   """
   def create_deck() do
@@ -138,6 +138,10 @@ defmodule Cards do
     Cards.create_deck
     |> Cards.shuffle
     |> Cards.deal(hand_size)
+  end
+
+  def hello() do
+    :world
   end
 
 end
