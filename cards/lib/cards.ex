@@ -58,9 +58,11 @@ defmodule Cards do
   end
 
   def save(deck, filename) do
+    # File.write takes a filename and a chardata representation of the file, hence we are calling erlang's term_to_binary
+    # Function to achieve this
     chardata = :erlang.term_to_binary deck
 
-    # pattern matching on a function will pipe its output to the case LHS
+    # Pattern matching on a function will pipe its output to the case LHS
     case File.write(filename, chardata) do
       :ok -> "#{filename} written successfully."
       {:error, _reason} -> "#{filename} not written."
