@@ -76,4 +76,16 @@ defmodule Cards do
     end
   end
 
+  def create_hand(hand_size) do
+    # Using the |> operator allows us to achieve the following lines of code
+    # cards = Cards.create_deck()
+    # shuffled = Cards.shuffle(cards)
+    # hand = Cards.deal(shuffled, hand_size)
+    # Note how the previous output is piped to the next function as the first argument
+    
+    Cards.create_deck
+    |> Cards.shuffle
+    |> Cards.deal(hand_size)
+  end
+
 end
