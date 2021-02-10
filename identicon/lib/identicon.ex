@@ -53,7 +53,8 @@ defmodule Identicon do
   end
 
   def pixel_map(%Identicon.Image{grid: grid} = image) do
-    Enum.map(grid, fn({_value, index} = x) -> coordinates index end)
+    pixels = Enum.map(grid, fn({_value, index} = x) -> coordinates index end)
+    %Identicon.Image{image | pixel_map: pixels}
   end
 
   def coordinates(index) do
