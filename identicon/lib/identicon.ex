@@ -7,6 +7,8 @@ defmodule Identicon do
     |> build_grid
     |> filter_odd
     |> pixel_map
+    |> draw_image
+    |> save_image(input)
   end
 
   def generate_hash(input) do
@@ -63,6 +65,21 @@ defmodule Identicon do
     x2 = x1 + 50
     y2 = y1 + 50
     {{x1,y1},{x2,y2}}
+  end
+
+  def draw_image(%Identicon.Image{colour: colour, pixel_map: pixel_map}) do
+    image = :egd.create(250, 250)
+    fill = :egd.color(colour)
+
+    Enum.each pixel_map, fn({start, stop}) ->
+      :egd.filledRectangle(image, start, stop, fill)
+    end
+
+    :egd.render(image)
+  end
+
+  def save_image(image, input) do
+    File.write("#{input}.png", image)
   end
 
 end
