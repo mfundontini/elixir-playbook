@@ -13,9 +13,7 @@ defmodule Identicon do
     %Identicon.Image{hex: hex}
   end
 
-  def get_colour(image) do
-    %Identicon.Image{hex: [red, green, blue | _rest ]} = image
-
+  def get_colour(%Identicon.Image{hex: [red, green, blue | _rest ]} = image) do
     %Identicon.Image{image | colour: {red, green, blue}}
   end
 
