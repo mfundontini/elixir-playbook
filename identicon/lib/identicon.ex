@@ -18,17 +18,27 @@ defmodule Identicon do
     %Identicon.Image{image | colour: {red, green, blue}}
   end
 
-  def build_grid(%Identicon.Image{hex: hex} = image) do
+  def build_grid_meh(%Identicon.Image{hex: hex} = image) do
     hex
     |> Enum.chunk(3)
     |> mirror_rows
   end
 
-  def mirror_rows(list) do
-    for row <- list do
+  def build_grid(%Identicon.Image{hex: hex} = image) do
+    hex
+    |> Enum.chunk(3)
+    |> Enum.map(&mirror_row/1)
+  end
+
+  def mirror_rows(list_of_rows) do
+    for row <- list_of_rows do
         [first, second, third] = row
         [first, second, third, second, first]
     end
+  end
+
+  def mirror_row([first, second | _rest] = row) do
+    row ++ [ second, first ]
   end
 
 end
